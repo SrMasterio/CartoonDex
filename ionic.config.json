@@ -1,0 +1,7 @@
+{
+  "name": "rickmortypokedex",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
