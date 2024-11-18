@@ -6,6 +6,8 @@ import { RickAndMortyService } from 'src/app/services/rick-and-morty.service';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
+import { ActionPerformed, PushNotificationSchema, PushNotifications, Token } from '@capacitor/push-notifications';
+
 
 @Component({
   selector: 'app-home',
