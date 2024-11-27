@@ -2,7 +2,7 @@ trigger:
 - main
 
 pool:
-  name: oal  # Usamos el pool autohospedado
+  name: Default  # Usamos el pool autohospedado
 
 steps:
 # 1. Configurar Node.js
