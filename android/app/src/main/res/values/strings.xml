@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">rickmortypokedex</string>
+    <string name="title_activity_main">rickmortypokedex</string>
+    <string name="package_name">com.notipush.dex</string>
+    <string name="custom_url_scheme">com.notipush.dex</string>
+</resources>

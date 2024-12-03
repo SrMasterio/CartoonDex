@@ -19,6 +19,11 @@ const routes: Routes = [
     ...canActivate(() => redirectUnauthorizedTo(['/login']))
   },
   {
+    path: 'privacidad',
+    loadChildren: () => import('./pages/privacidad/privacidad.module').then( m => m.PrivPageModule),
+    ...canActivate(() => redirectUnauthorizedTo(['/privacidad']))
+  },
+  {
     path: 'intro',
     loadChildren: () => import('./pages/intro/intro.module').then( m => m.IntroPageModule),
     ...canActivate(() => redirectUnauthorizedTo(['/login']))
@@ -30,7 +35,7 @@ const routes: Routes = [
   {
     path: 'register',
     loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
-  },
+  }
 ];
 
 @NgModule({

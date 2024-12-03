@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "81315609649",
+    "project_id": "rickmortydex",
+    "storage_bucket": "rickmortydex.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:81315609649:android:fc7e570b4842f5fbca2910",
+        "android_client_info": {
+          "package_name": "com.notipush.dex"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "81315609649-fa302fiuis4c0bs6ugo0m50mcc2mblmh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbvxsFUmFMadXRdkq0zuNHulMLHnHf-5o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "81315609649-fa302fiuis4c0bs6ugo0m50mcc2mblmh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

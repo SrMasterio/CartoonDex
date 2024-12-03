@@ -1,17 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { NgControl } from '@angular/forms';
 import { ActionPerformed, PushNotificationSchema, PushNotifications, Token } from '@capacitor/push-notifications';
+import { Platform } from '@ionic/angular';
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
-export class AppComponent implements OnInit {  // Implementa OnInit en la clase
+export class AppComponent{  // Implementa OnInit en la clase
+  constructor(
+    private platform: Platform
+  ) {
+    if(this.platform.is("capacitor")) this.initPush()
+  }
 
-  constructor() {}
-
-  ngOnInit() {
+  initPush() {
     console.log('Initializing HomePage');
 
     // Solicitar permiso para usar notificaciones push
