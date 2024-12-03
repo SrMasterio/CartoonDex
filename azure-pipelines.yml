@@ -1,0 +1,42 @@
+trigger:
+- main
+
+variables:
+  apiUrl: 'https://rickandmortyapi.com/api'  # URL de la API de Rick y Morty
+
+pool:
+  name: oal  # Usamos el pool autohospedado
+
+steps:
+# Paso 1: Instalar Node.js
+- task: NodeTool@0
+  inputs:
+    versionSpec: '20.x'
+  displayName: 'Install Node.js'
+
+# Paso 2: Instalar dependencias y construir el proyecto Angular
+- script: |
+    npm install
+    npm run build --prod
+  displayName: 'Install dependencies and build Angular app'
+
+# Paso 3: Instalar Firebase CLI
+- script: |
+    npm install -g firebase-tools
+  displayName: 'Install Firebase CLI'
+
+# Paso 4: Realizar una consulta a la API de Rick y Morty
+- script: |
+    response=$(curl -s -w "%{http_code}" -o /tmp/response.json '$(apiUrl)/character/1' -H "Content-Type: application/json")
+    if [ "$response" -ne 200 ]; then
+      echo "Error: API request failed with status $response"
+      exit 1
+    fi
+    echo "API request succeeded with response code $response"
+  displayName: 'Validate API Response'
+
+# Paso 5: Desplegar la aplicación en Firebase Hosting
+- script: |
+    firebase deploy --token $(firebase)
+  displayName: 'Deploy to Firebase Hosting'
+
